@@ -1,0 +1,52 @@
+      #navbar {
+        /* ul요소는 margin / 왼쪽에 padding이 존재해서 다 없애기!! */
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        height: 40px;
+        /*display: flex;*/
+      }
+
+      #navbar > li {
+        height: 100%;
+        float: left;
+        width: 16%;
+        text-align: center;
+      }
+
+      #navbar a{
+        text-decoration: none;
+        color: #485ba5;
+        font-family: "궁서체";
+        font-weight: 900;
+        width: 100%;
+        height: 100%; /*a태그 인라인 요소라서 가로세로 안먹음*/
+        display: block;
+        /*vertical-align: middle;*/
+        line-height: 40px;
+        position:relative;
+        transform: scale(1);
+      }
+
+      /*평소에는 안보이다가 커서가 올라가면 펼쳐지게1*/
+      #navbar > li > ul {
+        list-style: none;
+        padding: 0px;
+        display: none;
+        border: 1px solid #485ba5;
+        border-radius: 8px;
+      }
+      /*평소에는 안보이다가 커서가 올라가면 펼쳐지게2*/
+      #navbar > li > a:hover + ul{
+        display:block;
+      }
+
+      /*평소에는 안보이다가 커서가 올라가면 펼쳐지게 3*/
+      #navbar > li > ul:hover {
+        display: block;
+      }
+
+      #navbar > li > ul a:hover {
+        background: rgb(255, 239, 239);
+        font-size: 17px;
+      }

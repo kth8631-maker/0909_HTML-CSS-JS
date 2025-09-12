@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>색깔놀이</title>
+    <style>
+        #color {
+            color:orangered;
+            color:yellowgreen;
+            color: #3e0703; /*16진수 형태*/
+            color: #03c75a;
+            color: #700b0f;
+            color: rgb(255, 114, 20); /* 0 ~ 255 */
+            color: rgba(255, 123, 66, 0.5); /* 0 ~ 1 숫자가 작을수록 투명*/
+            color: hsl(2, 20%, 30%); /*색상값 0~360, 채도%, 명도%*/
+            color: hsla(2, 20% 30%, 0.899);
+        }
+
+        /* text-decoration */
+        #td1 {
+            text-decoration : underline;
+        }
+        #td2 {
+            text-decoration : overline;
+        }
+        #td3 {
+            text-decoration : line-through;
+        }
+
+        a{
+            text-decoration : none;
+            color : rgb(50, 50, 50);
+
+            &:hover{
+                text-decoration : underline;
+                font-size: 17px;
+                color: rgba(50, 50, 50, 0.4);
+            }
+        }
+
+    </style>
+  </head>
+  <body>
+    <h1>텍스트 색깔놀이하기~~~~~~~</h1>
+
+    <pre id="color">
+        [ 표현법 ]
+
+        선택자 {
+            color : 색상값;
+        }
+    </pre>
+    <hr />
+
+    <h3>text-decoration : 텍스트에 줄을 긋거나 지울 때 사용</h3>
+
+    <pre>
+        [ 표현법 ]
+        선택자 {
+            text-decoration : none / underline / overline / line-through;
+        }
+    </pre>
+
+    <ul>
+        <li id="td1">아래에 선 긋기</li>
+        <li id="td2">위에 선 긋기</li>
+        <li id="td3">중간에 선 긋기</li>
+    </ul>
+
+    <a href="http://www.naver.com">네이버</a>
+
+    <hr>
+
+    <h3>text-align : 텍스트를 정렬할 때 사용</h3>
+
+    <pre>
+        [ 표현법 ]
+        선택자 {
+            text-align: left / right / center / justify;
+        }
+    </pre>
+
+    <h4>
+        <p style="text-align:right">
+            아침잠은 인생에서 가장 큰 지출이다 
+
+        </p>
+    </h4>
+    <h4>
+        <p style="text-align:center;">
+            아침잠은 인생에서 가장 큰 지출이다
+        </p>
+    </h4>
+    <h4>
+        <p style="text-align: justify">
+            아침잠은 인생에서 가장 큰 지출이다
+        </p>
+    </h4>
+    <h4>
+        <p style="text-align: left">
+            아침잠은 인생에서 가장 큰 지출이다
+        </p>
+    </h4>
+
+    <hr />
+  </body>
+</html>
+<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+

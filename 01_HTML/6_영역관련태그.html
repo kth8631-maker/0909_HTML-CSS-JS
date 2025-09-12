@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>영역관련태그</title>
+
+    <style>
+      div,
+      span {
+        width: 400px;
+        height: 400px;
+        border: 1px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>영역이란 뭘까...?</h1>
+    <button>버튼</button> <br />
+    <label style="font-size: 32px; font-weight: bold">라벨이란 뭘까...?</label>
+    <button>버튼</button> <br />
+
+    <!--
+        1. 블럭(block) 요소 : 한 줄 단위로 영역을 차지하는 요소
+                            줄바꿈이 적용되어 요소가 다음 줄로 넘어감
+                            (h1 ~ h6, p, pre, textarea, ul, li, ol ... "div")
+
+
+        2. 인라인(inline) 요소 : Content길이만큼만 영역을 차지하는 요소
+                            줄바꿈이 적용되지 않아 다음줄로 넘기고 싶으면 br로 개행해야함!
+                            (input, label, button, mark, s, img, ... "span")
+    -->
+
+    <h3>div요소와 span요소의 차이점</h3>
+
+    <h4>div 요소 : 블럭요소로 영역을 지정할 수 있는 요소</h4>
+    <div id="div1">1번 영역</div>
+    <div id="div2">2번 영역</div>
+    <div id="div3">3번 영역</div>
+
+    <h4>span 요소 : 인라인요소로 영역을 지정할 수 있는 요소</h4>
+    <span id="span1">1번 영역</span><span id="span2">2번 영역</span
+    ><span id="span3">3번 영역</span>
+
+    <h4>div와 span의 영역 지정 방식</h4>
+
+    <div>
+      The golden age of America begins right now. From this day forward, our
+      country will flourish and be respected again all over the world. We will
+      be the envy of every nation. And we will not allow ourselves to be taken
+      advantage of any longer.
+    </div>
+    <div>
+      During every single day of the Trump administration, I will, very simply,
+      put America first. Our sovereignty will be reclaimed. Our safety will be
+      restored. The scales of justice will be rebalanced. The vicious, violent
+      and unfair weaponization of the Justice Department and our government will
+      end. And our top priority will be to create a nation that is proud and
+      prosperous and free. America will soon be greater, stronger, and far more
+      exceptional than ever before. I return to the presidency confident and
+      optimistic that we are at the start of a thrilling new era of national
+      success. A tide of change is sweeping the country. Sunlight is pouring
+      over the entire world, and America has the chance to seize this
+      opportunity like never before.
+    </div>
+    <br /><br /><br /><br /><br />
+
+    <span
+      >But first, we must be honest about the challenges we face. While they are
+      plentiful, they will be annihilated by this great momentum that the world
+      is now witnessing and the United States of America. As we gather today,
+      our government confronts a crisis of trust. For many years, the radical
+      and corrupt establishment has extracted power and wealth from our
+      citizens. While the pillars of our society lay broken and seemingly in
+      complete disrepair, we now have a government that cannot manage even a
+      simple crisis at home while at the same time stumbling into a continuing
+      catalog of catastrophic events abroad.</span
+    >
+
+    <h5>ifram 태그</h5>
+
+    <p>현재 이 HTML문서에 다른 웹페이지를 포함하는 태그</p>
+
+    <iframe src="4_목록관련태그.html" frameborder="0" width="800"></iframe>
+
+    <iframe
+      width="1310"
+      height="737"
+      src="https://www.youtube.com/embed/CF0mg1CMc5c"
+      title="[LIVE] 이재명 무역협상 망했다ㅣ반중시위에 또 긁힌 이재명 l KT 소액결제 범죄, 배후는? | 네팔 친중 정부 붕괴 | 프랑스 IMF 터지나"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      referrerpolicy="strict-origin-when-cross-origin"
+      allowfullscreen
+    ></iframe>
+  </body>
+
+  <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+</html>

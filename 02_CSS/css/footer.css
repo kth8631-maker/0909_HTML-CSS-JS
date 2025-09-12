@@ -1,0 +1,46 @@
+      #footer_1,
+      #footer_2 {
+        width: 100%;
+      }
+      #footer_1 {
+        height: 20%;
+        background: orangered;
+      }
+      #footer_2 {
+        height: 80%;
+      }
+
+      /*footer_1의 자식요소 a태그만 선택*/
+      #footer_1 > a{
+        text-decoration: none;
+        color: black;
+        margin: 33px;
+        vertical-align: middle;
+
+        &:hover{
+            color: yellowgreen;
+        }
+      }
+
+      /*태그에 대한 세부스타일 설정*/
+      #footer_2 > p{
+        width: 100%;
+        margin: 0;
+        background: khaki;
+        font-weight: lighter;
+        font-family: "궁서체"
+      }
+
+      #p_1{
+        height: 80%;
+        font-size: 14px;
+        padding-top : 5px;
+        padding-left: 4px;
+      }
+      #p_2{
+        height: 20%;
+        font-size: 11px;
+        padding-left: 4px;
+      }
+
+      
