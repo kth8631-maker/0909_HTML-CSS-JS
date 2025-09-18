@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>이거 좀 어려울지도..?</title>
+
+    <style>
+      body {
+        background-color: lightgreen;
+        color: rgb(226, 73, 226);
+        font-weight: 800;
+      }
+
+      .area {
+        width: 300px;
+        height: 100px;
+        background: greenyellow;
+        margin: auto;
+        overflow: scroll;
+      }
+
+      .small {
+        height: 200px;
+      }
+
+      .big {
+        height: 500px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>브라우저 인터페이스</h1>
+
+    <p>
+      브라우저 상에서 자바스크립트라는 언어로 브라우저라는 프로그램을 제어할 수
+      있도록 BOM과 DOM이라는 인터페이스가 제공됨 <br /><br />
+
+      - BOM(Browser Object Model) : 브라우저 관련 <br />
+      - DOM(Document Object Model) : HTML문서 관련 <br />
+    </p>
+
+    <hr />
+
+    <h3>window객체가 제공하는 메소드</h3>
+
+    <!-- 
+        window.alert();
+        window.console.log();
+        window.confirm();
+        window.prompt();
+    -->
+
+    <h4>window.open()</h4>
+
+    <a href="http://www.naver.com" target="_black">오픈~</a>
+
+    <button onclick="openFn();">옛날 옛적 호랑이 담배피던 시절</button>
+
+    <script>
+      function openFn() {
+        //window.open();
+        window.open("http://www.naver.com", "하하", "width=400, height=500");
+      }
+    </script>
+
+    <hr />
+
+    <h4>* window.setTimeout(함수, ms)</h4>
+
+    <button onclick="timeout()">나는 버튼이다.</button>
+
+    <script>
+      function timeout() {
+        // alert("안녕?");
+        // 버튼을 누르면 5초 뒤에 alert 뜨게 만들고 싶음
+        /*
+            window.setTimeout(() => {
+                alert("나는 사실 3.85초 뒤에 뜸");
+            }, 3850);
+            */
+
+        const newWindow = open(); // 창이 새로 열리고 : 새창 window객체
+        newWindow.alert("확인 버튼을 누르면 3초 뒤 창이 닫힙니다.");
+
+        setTimeout(() => {
+          newWindow.close();
+        }, 3000);
+
+        // 내가 지정한 일정 시간 후에 "딱 한번"만 핸들러를 수행
+      }
+    </script>
+
+    <hr />
+
+    <h4>window.setInterval(함수, ms)</h4>
+
+    <button onclick="timer();">째깍째깍</button>
+    <div id="area1" class="area"></div>
+
+    <script>
+      function timer() {
+        const area = document.getElementById("area1");
+        const value = "ㅋ";
+        let count = 10;
+
+        window.setInterval(() => {
+          // area.innerHTML += value;
+          // area.innerHTML = count--;
+
+          // 9번 객체_part02.html 파일을 참고하여
+          // 시계 만들기
+
+          // 화면에
+          // 11:02:30 오전
+          // 요렇게 매 초마다 바뀌게 출력하게 만들기 시~~~~~작!
+
+          const date = new Date();
+          let hour = date.getHours();
+          let min = date.getMinutes();
+          let sec = date.getSeconds();
+          let ap = "";
+
+          if (hour > 12) {
+            hour -= 12;
+            ap = "오후";
+          } else {
+            ap = "오전";
+          }
+
+          if (sec < 10) {
+            sec = "0" + sec;
+          }
+          if (min < 10) {
+            min = "0" + min;
+          }
+          if (hour < 10) {
+            hour = "0" + hour;
+          }
+
+          area.innerHTML = `${hour}:${min}:${sec} ${ap}`;
+        }, 1000);
+        // setINterval : 내가 지정한 간격마다 "매 번" 핸들러를 수행
+      }
+    </script>
+
+    <hr />
+
+    <h3>* Bom(Browser Object Model)</h3>
+
+    <p>location, screen, navigator</p>
+
+    <hr />
+
+    <h4>location 객체</h4>
+
+    <button onclick="console.log(location)">로케-이션 확인!!!!!</button>
+
+    <a href="http://www.naver.com">하이빠레빠란스~~</a>
+    <!-- a태그는 애초에 클릭 시 요청할 URL을 작성할 수 있는 속성을 제공 -->
+
+    <p>브라우저의 주소입력창 => URL(href속성값)</p>
+
+    <button onclick="loc();">매커니즘~</button>
+
+    <script>
+      function loc() {
+        location.href = "https://www.naver.com";
+      }
+    </script>
+
+    <!-- 새로고침 -->
+    <button onclick="location.reload();">새로고쳐랏</button>
+    <button onclick="location.href=location.href">새로고침</button>
+
+    <!-- 
+        assign(), replace()
+        replace() == 뒤로가기를 사용할 수 없음
+    -->
+
+    <h5>screen객체</h5>
+    <button onclick="console.log(screen)">스크린</button>
+    <!-- 사용자가 보고있는 화면에 대한 정보 -->
+
+    <h5>navigator</h5>
+    <button onclick="console.log(navigator)">나비</button>
+    <!-- 브라우저에 대한 정보 -->
+
+    <hr />
+
+    <h2>* DOM(Document Object model)</h2>
+
+    <p>
+      - 요소 노드(Element Node) : 태그 자체를 의미 <br />
+      - 텍스트 노드(Text Node) : 태그 내에 기록되는 내용을 의미 <br />
+
+      텍스트노드가 존재하지 않는 요소(빈태그) : input, img, br, hr 텍스트노드가
+      있는 요소 : div, button, span, label...
+    </p>
+
+    <div id="area3" class="area small"></div>
+    <button onclick="addElement()">빠른</button>
+
+    <script>
+      function addElement() {
+        // 동적으로 요소를 만들자
+        // 처음 문서 로딩할 때는 존재하지 않다가
+        // 나중에 만들어지는 요소 == 동적인 요소
+
+        // 컨트롤러에서 응답받은 문자열 => user01
+        /*
+                <h3>user01</h3>
+            */
+
+        const userId = "user01";
+
+        // 1. 문자열로 만드는 방법
+        // document.getElementById("area3").innerHTML = `<h3>${userId}</h3>`;
+
+        // 2. document객체가 제공하는 메소드를 통해 "요소객체"를 만들기
+        // 2_1) elementNode만들기 : document.createElement('태그명');
+        const elementNode = document.createElement("h3");
+        console.log(elementNode);
+        // 우리가 나중에 배우게 될 React는 가상 DOM이라는 개념을 사용함
+
+        // 2_2) textNode만들기 : document.createTextNode('텍스트');
+        const textNode = document.createTextNode(userId);
+        console.log(textNode);
+
+        // 3. 두개의 노드를 연결
+        // a의 자식으로 b를 추가
+        // a.appendChild(b);
+        elementNode.appendChild(textNode);
+        console.log(elementNode);
+        // document.querySelector("#area3").innerHTML = elementNode;
+        document.querySelector("#area3").appendChild(elementNode);
+
+        // 텍스트 노드가 없는 요소
+
+        const img = document.createElement("img");
+        // 이거 객체임
+        
+        // 객체에 속성을 추가하는 방법은?
+        // 객체명.속성명 = 값
+        img.src = 
+        "https://s.pstatic.net/static/www/mobile/edit/20250904_1095/upload_1756967710755UdJSz.png"
+
+
+        document.getElementById("area3").appendChild(img);
+      }
+    </script>
+  </body>
+</html>
+
+<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
